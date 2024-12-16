@@ -1,7 +1,9 @@
 #pragma once
 
+#if defined(__APPLE__) || defined(__MACH__)
 #include <termios.h>
 #include <unistd.h>
+#endif
 #include <vector>
 
 #if defined(__APPLE__) || defined(__MACH__)
@@ -40,7 +42,7 @@ struct Cell
 {
     CellState state;
     bool isMine;
-    uint8_t minesAround;
+    int minesAround;
 };
 
 class Board
